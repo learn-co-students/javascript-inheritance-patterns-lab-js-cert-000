@@ -7,14 +7,29 @@ Point.prototype.toString = function () {
   return(/this.x,\s?this.y/)
 }
 
-function Shape () {
+function Shape () {/*
 this.addToPlane = function (x,y) {
 this.position = new Point ( x, y)
+}**/
+/*this.move = function (x,y) {
+ this.position = new Point ( x, y)
+}**/
+Point.call(this);
 }
-this.move = function (x,y) {
+
+
+Shape.prototype = Object.create(Point.prototype);
+
+Shape.prototype.constructor = Shape;
+
+Shape.prototype.addToPlane = function (x,y) {
+this.position = new Point ( x, y)
+}
+
+Shape.prototype.move = function (x,y) {
  this.position = new Point ( x, y)
 }
-}
+
 
 
 
@@ -23,7 +38,9 @@ Shape.prototype = Object.create(Point.prototype);
 
 Shape.prototype.constructor = Shape;
 
-
+Shape.prototype.addToPlane = function (x,y) {
+this.position = new Point ( x, y)
+}
 
 function Circle(r){
 Shape.call(this);
@@ -35,7 +52,7 @@ this.area = function (){
 return r*r*Math.PI
 }
 this.circumference = function () {
-return 2*Math.PI*r
+return 2*r*Math.PI
 }
 }
 
