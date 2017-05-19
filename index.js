@@ -4,7 +4,7 @@ function Point (x,y) {
 }
 
 Point.prototype.toString = function () {
-  return (console.log("/" + this.x + ",\\s?" + this.y + "/" ))
+  return("/" + this.x + ",\\s?" + this.y + "/" )
 }
 
 function Shape () {
