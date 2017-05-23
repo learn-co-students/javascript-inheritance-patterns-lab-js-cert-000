@@ -52,11 +52,11 @@ Circle.prototype = Object.create(Shape.prototype);
 Circle.prototype.constructor = Circle;
 
 Circle.prototype.area = function (){
-return (this.radius*this.radius*3.141592653589793)
+return (Math.PI* this.radius^2)
 }
 
 Circle.prototype.circumference = function (){
-return (2*3.141592653589793*this.radius)
+return (2*Math.PI*this.radius)
 }
 
 
