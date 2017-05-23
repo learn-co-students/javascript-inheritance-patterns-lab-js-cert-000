@@ -35,15 +35,15 @@ Shape.prototype.move = function (x,y) {
 
 function Circle(r){
 Shape.call(this);
-this.diameter = function (){
-return 2*r
-}
 this.radius = r
+this.diameter = function (){
+return 2*this.radius
+}
 this.area = function (){
-return r*r*Math.PI
+return this.radius*this.radius*Math.PI
 }
 this.circumference = function () {
-return 2*r*Math.PI
+return 2*Math.PI*this.radius
 }
 }
 
