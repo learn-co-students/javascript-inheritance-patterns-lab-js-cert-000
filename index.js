@@ -14,7 +14,7 @@ this.position = new Point ( x, y)
 /*this.move = function (x,y) {
  this.position = new Point ( x, y)
 }**/
-Point.call(this);
+//Point.call(this);
 }
 
 
@@ -32,15 +32,6 @@ Shape.prototype.move = function (x,y) {
 
 
 
-
-
-Shape.prototype = Object.create(Point.prototype);
-
-Shape.prototype.constructor = Shape;
-
-Shape.prototype.addToPlane = function (x,y) {
-this.position = new Point ( x, y)
-}
 
 function Circle(r){
 Shape.call(this);
