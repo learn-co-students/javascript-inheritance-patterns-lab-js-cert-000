@@ -39,18 +39,25 @@ this.radius = r
 this.diameter = function (){
 return 2*this.radius
 }
-this.area = function (){
+/*this.area = function (){
 return (this.radius*this.radius*3.141592653589793)
 }
 this.circumference = function () {
 return (2*3.141592653589793*this.radius)
-}
+}**/
 }
 
 Circle.prototype = Object.create(Shape.prototype);
 
 Circle.prototype.constructor = Circle;
 
+Circle.prototype.area = function (){
+return this.radius*this.radius*Math.PI
+}
+
+Circle.prototype.circumference = function (){
+return 2*Math.PI*this.radius
+}
 
 
 
